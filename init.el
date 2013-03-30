@@ -5,6 +5,23 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/theme/")
 (load-theme 'firebelly)
 ;; ==================================================================
+(when window-system
+  ; hide the toolbar in gui mode.
+  (tool-bar-mode -1)
+  ; turn off visual-line-mode
+  (visual-line-mode -1)
+  ; hide fringes
+  (fringe-mode -1)
+  ; hide scroll bars.
+  (scroll-bar-mode -1)
+  ; set the size
+  (add-to-list 'default-frame-alist
+    '(width . 80))
+  (add-to-list 'default-frame-alist
+    '(height . 62))
+  ; set the font.
+  (set-face-attribute 'default nil :font "DejaVu Sans Mono" :height 100))
+;; ==================================================================
 ;; Electric pairs and indentation.
 (electric-pair-mode 1) (electric-indent-mode 1)
 ;; interactively do!
@@ -16,6 +33,9 @@
 (setq backup-inhibited t)
 (setq inhibit-splash-screen t)
 (menu-bar-mode -1)
+(setq-default cursor-type 'hbar)
+(setq-default cursor-in-non-selected-windows nil)
+(blink-cursor-mode -1)
 ;; ==================================================================
 ;; http://steve.yegge.googlepages.com/my-dot-emacs-file
 (defun rename-file-and-buffer (new-name)
