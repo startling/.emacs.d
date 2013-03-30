@@ -4,6 +4,10 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/theme/")
 (load-theme 'firebelly)
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
 ;; ==================================================================
 (when window-system
   ; hide the toolbar in gui mode.
