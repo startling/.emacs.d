@@ -5,8 +5,9 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/theme/")
 (load-theme 'firebelly)
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list
+ 'package-archives
+ '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 ;; ==================================================================
 (when window-system
