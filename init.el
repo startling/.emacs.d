@@ -73,4 +73,23 @@
          "#haskell-blah" "#haskell-overflow" "#idris" "#python")))
 ;; ==================================================================
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-hook 'markdown-mode-hook
+          (lambda ()
+            (turn-on-auto-fill)
+            (outline-minor-mode)
+            (setq tab-width 2)))
+;; ==================================================================
+(require 'cl) (require 'mingus)
+(global-set-key
+ (kbd "C-`")
+ (lambda ()
+   (interactive)
+   (mingus-start-daemon)
+   (mingus)))
+(global-set-key
+ (kbd "M-`")
+ (lambda ()
+   (interactive)
+   (mingus-start-daemon)
+   (mingus-browser))
 ;; ==================================================================
