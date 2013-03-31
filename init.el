@@ -72,3 +72,5 @@
       '((".*\\.freenode.net" "#python-offtopic" "#haskell"
          "#haskell-blah" "#haskell-overflow" "#idris" "#python")))
 ;; ==================================================================
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+;; ==================================================================
