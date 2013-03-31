@@ -62,3 +62,12 @@
    (interactive)
    (rename-file-and-buffer (ido-find-file))))
 ;; ==================================================================
+(setq erc-nick "startling") (setq erc-nick-uniquifier "'")
+(setq erc-track-exclude-types
+      '("JOIN" "KICK" "NICK" "PART" "QUIT" "MODE" "333" "353"
+        "324" "329" "332" "447"))
+(erc-autojoin-mode t)
+(setq erc-autojoin-channels-alist
+      '((".*\\.freenode.net" "#python-offtopic" "#haskell"
+         "#haskell-blah" "#haskell-overflow" "#idris" "#python")))
+;; ==================================================================
